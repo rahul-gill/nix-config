@@ -68,15 +68,6 @@
         vim.api.nvim_set_keymap('n', '<C-f>', ':NERDTreeFocus<CR>', { noremap = true })
         vim.api.nvim_set_keymap('n', '<C-t>', ':NERDTreeToggle<CR>', { noremap = true })
 
-        -- Enable treesitter highlighting
-        require'nvim-treesitter.configs'.setup {
-          --ensure_installed = { "c", "cpp", "kotlin", "rust" },
-          --auto_install = true,
-          highlight = {
-            enable = true,
-          }
-        }
-
         -- Status bar mod
         vim.g.airline_section_z = '[%l:%c]/%L %p%%'
 
@@ -101,6 +92,28 @@
         nvim-treesitter.withAllGrammars
       ];
     };
+
+	programs.alacritty = {
+		enable = true;
+		settings = {
+			window.decorations = "None";
+			window.padding = {
+				x = 4;
+				y = 4;
+			};
+		};
+	};
+
+	programs.librewolf = {
+		enable = true;
+		settings = {
+			"webgl.disabled" = false;
+			"privacy.resistFingerprinting" = false;
+			"privacy.clearOnShutdown.cookies" = false;
+			"privacy.clearOnShutdown.downloads" = false;
+			"media.autoplay.blocking_policy" = 2;
+		};
+	};
   };
 }
 

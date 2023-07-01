@@ -2,7 +2,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
 	imports = [ 
 		./hardware-configuration.nix
@@ -22,7 +21,7 @@
 	boot.loader.efi.canTouchEfiVariables = true;
 
 	# Networking.
-	networking.hostName = "nixos";
+	networking.hostName = "ashenone";
 	networking.networkmanager.enable = true;
 
 	# Set your time zone.
@@ -52,6 +51,7 @@
 		elisa
 		oxygen
 		khelpcenter
+		konsole
 	];
 
 	# Configure keymap in X11
@@ -116,11 +116,14 @@
 		htop
 		neofetch
 		git
-		firefox
+		librewolf
 		vlc
 		vscodium
 		alacritty
+		joplin-desktop
 		jetbrains.idea-ultimate
+		jetbrains.goland
+		go
 	];
 }
 
